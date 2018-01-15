@@ -1,4 +1,4 @@
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 1   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 1   
 
 
 C51 COMPILER V9.53.0.0, COMPILATION OF MODULE MUSIC_BOX
@@ -63,7 +63,7 @@ line level    source
   49          #define AS4 (11)
   50          #define BB4 (11)
   51          #define B4 (12)
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 2   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 2   
 
   52          #define C5 (13)
   53          #define CS5 (14)
@@ -128,7 +128,7 @@ line level    source
  112                          A4,QUARTER,
  113                          A4,QUARTER,
  114                          AS4,QUARTER,
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 3   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 3   
 
  115                          C5,QUARTER,
  116                          C5,QUARTER,
@@ -193,7 +193,7 @@ line level    source
  175          
  176          #define CLAIRE_F_TEMPO (20)
  177          #define CLAIRE_F_SCORE (41)
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 4   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 4   
 
  178          #define CLAIRE_F_LEN (CLAIRE_F_SCORE*2+2)
  179          unsigned char code claire_fontaine[CLAIRE_F_LEN]={
@@ -258,7 +258,7 @@ line level    source
  238                          A4,QUARTER,
  239                          F4,QUARTER,
  240                          A4,QUARTER,
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 5   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 5   
 
  241                          AS4,QUARTER,
  242                          C5,HALF,
@@ -323,7 +323,7 @@ line level    source
  301                          A4,QUARTER,
  302                          G4,QUARTER,
  303                          F4,QUARTER,
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 6   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 6   
 
  304                          F4,QUARTER,
  305                          E4,QUARTER,
@@ -337,116 +337,330 @@ line level    source
  313                          D4,HALF+QUARTER
  314          };
  315          
- 316          #define TUNES_COUNT (4)
- 317          unsigned char code  *tunes_list[TUNES_COUNT]={
- 318                          ode_joie,
- 319                          claire_fontaine,
- 320                          frere_jacques,
- 321                          melodia
- 322          };
- 323          
- 324          
- 325          
- 326          // pause in milliseconds
- 327          void pause(unsigned int msec){
- 328   1      #define MSEC (65408)
- 329   1      
- 330   1              TL1=MSEC&0xff;
- 331   1              TH1=MSEC>>8;
- 332   1              TCON_TF1=0;
- 333   1              TCON_TR1=1;
- 334   1              while (msec){
- 335   2                      while (!TCON_TF1);
- 336   2                      msec--;
- 337   2                      TL1=MSEC&0xff;
- 338   2                      TH1=MSEC>>8;
- 339   2                      TCON_TF1=0;
- 340   2              }
- 341   1              TCON_TR1=0;
- 342   1      }
- 343          
- 344          void tone(unsigned char tone,unsigned int time){
- 345   1              PCA0CPH0=scale[tone];
- 346   1              P1MDOUT|=P1MDOUT_B1__PUSH_PULL;
- 347   1              P1_B1=1;
- 348   1              pause(40);
- 349   1              P1MDOUT&=~P1MDOUT_B1__PUSH_PULL;
- 350   1          pause(time);
- 351   1      }
- 352          
- 353          void music_box(unsigned char code *list){
- 354   1              unsigned char n,i,length,tempo;
- 355   1      
- 356   1              length=list[0];
- 357   1              tempo=list[1];
- 358   1              PCA0CN0|=PCA0CN0_CR__RUN;
- 359   1              for (i=2;i<length;i+=2){
- 360   2                      n=list[i];
- 361   2                      P0|=0x1f;
- 362   2                      P0&=~n;
- 363   2                      if (!n){
- 364   3                              pause(tempo*list[i+1]+40);
- 365   3                      }else{
- 366   3                              tone(n,tempo*list[i+1]);
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 7   
+ 316          #define TABAC_TEMPO (20)
+ 317          #define TABAC_SCORE (30)
+ 318          #define TABAC_LEN (TABAC_SCORE*2+2)
+ 319          
+ 320          unsigned char code bon_tabac[TABAC_LEN]={
+ 321                          TABAC_LEN,TABAC_TEMPO,
+ 322                          G4,QUARTER,
+ 323                          A4,QUARTER,
+ 324                          B4,QUARTER,
+ 325                          G4,QUARTER,
+ 326                          A4,HALF,
+ 327                          A4,QUARTER,
+ 328                          B4,QUARTER,
+ 329                          C5,HALF,
+ 330                          C5,HALF,
+ 331                          B4,HALF,
+ 332                          B4,HALF,
+ 333                          G4,QUARTER,
+ 334                          A4,QUARTER,
+ 335                          B4,QUARTER,
+ 336                          G4,QUARTER,
+ 337                          A4,HALF,
+ 338                          A4,QUARTER,
+ 339                          B4,QUARTER,
+ 340                          C5,HALF,
+ 341                          D5,HALF,
+ 342                          G4,WHOLE,
+ 343                          D5,HALF,
+ 344                          D5,QUARTER,
+ 345                          C5,QUARTER,
+ 346                          B4,HALF,
+ 347                          A4,QUARTER,
+ 348                          B4,HALF,
+ 349                          C5,HALF,
+ 350                          D5,HALF,
+ 351                          A4,WHOLE
+ 352          };
+ 353          
+ 354          #define SOURIS_TEMPO (20)
+ 355          #define SOURIS_SCORE (52)
+ 356          #define SOURIS_LEN (SOURIS_SCORE*2+2)
+ 357          char code souris_verte[SOURIS_LEN]={
+ 358                          SOURIS_LEN,SOURIS_TEMPO,
+ 359                          G4,HEIGHTH,
+ 360                          G4,HEIGHTH,
+ 361                          G4,HEIGHTH,
+ 362                          A4,HEIGHTH,
+ 363                          G4,QUARTER,
+ 364                          D4,QUARTER,
+ 365                          G4,HEIGHTH,
+ 366                          G4,HEIGHTH,
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 7   
 
- 367   3                      }
- 368   2              }
- 369   1              PCA0CN0&=~PCA0CN0_CR__RUN;
- 370   1      }
- 371          
- 372          #define BTN_DOWN (0)
- 373          #define BTN_UP  (1)
- 374          // attend que le bouton soie
- 375          // dans l'état demandé.
- 376          void wait_button(char state){
- 377   1              char count;
- 378   1              count=0;
- 379   1              while (count<10){
- 380   2                      pause(1);
- 381   2                      if (state==P1_B2){
- 382   3                              count++;
- 383   3                      }else{
- 384   3                              count=0;
- 385   3                      }
- 386   2              }
- 387   1      }
- 388          
- 389          //-----------------------------------------------------------------------------
- 390          // main() Routine
- 391          // ----------------------------------------------------------------------------
- 392          int main (void)
- 393          {
- 394   1              unsigned char i,mode, prev;
- 395   1        // Call hardware initialization routine
- 396   1        enter_DefaultMode_from_RESET();
- 397   1      
- 398   1        i=0;
- 399   1        prev=0;
- 400   1        mode=P1_B3;
- 401   1        while (1) 
- 402   1        {
- 403   2          // $[Generated Run-time code]
- 404   2          // [Generated Run-time code]$
- 405   2                wait_button(BTN_DOWN);
- 406   2                if (mode){
- 407   3                        do{
- 408   4                               // i=random(8)%TUNES_COUNT;
- 409   4                                i=TL0%TUNES_COUNT;
- 410   4                        }while (i==prev);
- 411   3                }else{
- 412   3                        i++;
- 413   3                        i%=TUNES_COUNT;
- 414   3                }
- 415   2                P0|=0xe0;
- 416   2                P0&=~(i<<5);
- 417   2                music_box(tunes_list[i]);
- 418   2                P0=0xff;
- 419   2                prev=i;
- 420   2                wait_button(BTN_UP);
- 421   2        }                             
- 422   1      }
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 8   
+ 367                          G4,HEIGHTH,
+ 368                          A4,HEIGHTH,
+ 369                          G4,QUARTER,
+ 370                          D4,QUARTER,
+ 371                          C5,HEIGHTH,
+ 372                          B4,HEIGHTH,
+ 373                          A4,HEIGHTH,
+ 374                          B4,HEIGHTH,
+ 375                          C5,HEIGHTH,
+ 376                          B4,HEIGHTH,
+ 377                          A4,QUARTER,
+ 378                          C5,HEIGHTH,
+ 379                          B4,HEIGHTH,
+ 380                          A4,HEIGHTH,
+ 381                          B4,HEIGHTH,
+ 382                          C5,HEIGHTH,
+ 383                          B4,HEIGHTH,
+ 384                          A4,QUARTER,
+ 385                          G4,HEIGHTH,
+ 386                          G4,HEIGHTH,
+ 387                          G4,HEIGHTH,
+ 388                          A4,HEIGHTH,
+ 389                          G4,QUARTER,
+ 390                          D4,QUARTER,
+ 391                          G4,HEIGHTH,
+ 392                          G4,HEIGHTH,
+ 393                          G4,HEIGHTH,
+ 394                          A4,HEIGHTH,
+ 395                          G4,QUARTER,
+ 396                          D4,QUARTER,
+ 397                          G4,HEIGHTH,
+ 398                          G4,HEIGHTH,
+ 399                          G4,HEIGHTH,
+ 400                          G4,HEIGHTH,
+ 401                          A4,QUARTER,
+ 402                          G4,HEIGHTH,
+ 403                          G4,HEIGHTH,
+ 404                          A4,HEIGHTH,
+ 405                          G4,HEIGHTH,
+ 406                          G4,HEIGHTH,
+ 407                          G4,HEIGHTH,
+ 408                          A4,QUARTER,
+ 409                          D5,QUARTER,
+ 410                          G4,WHOLE
+ 411          };
+ 412          
+ 413          #define GOD_SAVE_TEMPO (20)
+ 414          #define GOD_SAVE_SCORE (41)
+ 415          #define GOD_SAVE_LEN (GOD_SAVE_SCORE*2+2)
+ 416          char code god_save[GOD_SAVE_LEN]={
+ 417                          GOD_SAVE_LEN,GOD_SAVE_TEMPO,
+ 418                          C5,QUARTER,
+ 419                          C5,QUARTER,
+ 420                          D5,QUARTER,
+ 421                          B4,QUARTER+HEIGHTH,
+ 422                          C5,HEIGHTH,
+ 423                          D5,QUARTER,
+ 424                          E5,QUARTER,
+ 425                          E5,QUARTER,
+ 426                          F5,QUARTER,
+ 427                          E5,QUARTER+HEIGHTH,
+ 428                          D5,HEIGHTH,
+ 429                          C5,QUARTER,
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 8   
+
+ 430                          D5,QUARTER,
+ 431                          C5,QUARTER,
+ 432                          B4,QUARTER,
+ 433                          C5,HALF+QUARTER,
+ 434                          G5,QUARTER,
+ 435                          G5,QUARTER,
+ 436                          G5,QUARTER,
+ 437                          G5,QUARTER+HEIGHTH,
+ 438                          F5,HEIGHTH,
+ 439                          E5,QUARTER,
+ 440                          F5,QUARTER,
+ 441                          F5,QUARTER,
+ 442                          F5,QUARTER,
+ 443                          F5,QUARTER+HEIGHTH,
+ 444                          E5,HEIGHTH,
+ 445                          D5,QUARTER,
+ 446                          E5,QUARTER,
+ 447                          F5,HEIGHTH,
+ 448                          E5,HEIGHTH,
+ 449                          D5,HEIGHTH,
+ 450                          C5,HEIGHTH,
+ 451                          E5,QUARTER+HEIGHTH,
+ 452                          F5,HEIGHTH,
+ 453                          G5,QUARTER,
+ 454                          A5,HEIGHTH,
+ 455                          F5,HEIGHTH,
+ 456                          E5,QUARTER,
+ 457                          D5,QUARTER,
+ 458                          C5,HALF+QUARTER
+ 459          };
+ 460          
+ 461          #define BEAU_SAPIN_TEMPO (18)
+ 462          #define BEAU_SAPIN_SCORE (50)
+ 463          #define BEAU_SAPIN_LEN (BEAU_SAPIN_SCORE*2+2)
+ 464          char code beau_sapin[BEAU_SAPIN_LEN]={
+ 465                          BEAU_SAPIN_LEN,BEAU_SAPIN_TEMPO,
+ 466                          PAUSE,QUARTER,
+ 467                          PAUSE,QUARTER,
+ 468                          D4,QUARTER,
+ 469                          G4,HEIGHTH+SIXTEENTH,
+ 470                          G4,SIXTEENTH,
+ 471                          G4,QUARTER,
+ 472                          A4,QUARTER,
+ 473                          B4,HEIGHTH+SIXTEENTH,
+ 474                          B4,SIXTEENTH,
+ 475                          B4,QUARTER+HEIGHTH,
+ 476                          B4,HEIGHTH,
+ 477                          A4,HEIGHTH,
+ 478                          B4,HEIGHTH,
+ 479                          C5,QUARTER,
+ 480                          FS4,QUARTER,
+ 481                          A4,QUARTER,
+ 482                          G4,QUARTER,
+ 483                          PAUSE,HEIGHTH,
+ 484                          D5,HEIGHTH,
+ 485                          D5,HEIGHTH+SIXTEENTH,
+ 486                          B4,SIXTEENTH,
+ 487                          E5,QUARTER+HEIGHTH,
+ 488                          D5,HEIGHTH,
+ 489                          D5,HEIGHTH+SIXTEENTH,
+ 490                          C5,SIXTEENTH,
+ 491                          C5,QUARTER+HEIGHTH,
+ 492                          C5,HEIGHTH,
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 9   
+
+ 493                          C5,HEIGHTH+SIXTEENTH,
+ 494                          A4,SIXTEENTH,
+ 495                          D5,QUARTER+HEIGHTH,
+ 496                          C5,HEIGHTH,
+ 497                          C5,HEIGHTH+SIXTEENTH,
+ 498                          B4,SIXTEENTH,
+ 499                          B4,QUARTER,
+ 500                          D4,QUARTER,
+ 501                          G4,HEIGHTH+SIXTEENTH,
+ 502                          G4,SIXTEENTH,
+ 503                          G4,QUARTER,
+ 504                          A4,QUARTER,
+ 505                          B4,HEIGHTH+SIXTEENTH,
+ 506                          B4,SIXTEENTH,
+ 507                          B4,QUARTER+HEIGHTH,
+ 508                          B4,HEIGHTH,
+ 509                          A4,HEIGHTH,
+ 510                          B4,HEIGHTH,
+ 511                          C5,QUARTER,
+ 512                          FS4,QUARTER,
+ 513                          A4,QUARTER,
+ 514                          G4,QUARTER,
+ 515                          PAUSE,QUARTER
+ 516          };
+ 517          
+ 518          #define TUNES_COUNT (8)
+ 519          unsigned char code  *tunes_list[TUNES_COUNT]={
+ 520                          ode_joie,
+ 521                          beau_sapin,
+ 522                          god_save,
+ 523                          souris_verte,
+ 524                          bon_tabac,
+ 525                          claire_fontaine,
+ 526                          frere_jacques,
+ 527                          melodia
+ 528          };
+ 529          
+ 530          
+ 531          
+ 532          // pause in milliseconds
+ 533          void pause(unsigned int msec){
+ 534   1      #define MSEC (65408)
+ 535   1      
+ 536   1              TL1=MSEC&0xff;
+ 537   1              TH1=MSEC>>8;
+ 538   1              TCON_TF1=0;
+ 539   1              TCON_TR1=1;
+ 540   1              while (msec){
+ 541   2                      while (!TCON_TF1);
+ 542   2                      msec--;
+ 543   2                      TL1=MSEC&0xff;
+ 544   2                      TH1=MSEC>>8;
+ 545   2                      TCON_TF1=0;
+ 546   2              }
+ 547   1              TCON_TR1=0;
+ 548   1      }
+ 549          
+ 550          void tone(unsigned char tone,unsigned int time){
+ 551   1              PCA0CPH0=scale[tone];
+ 552   1              P1MDOUT|=P1MDOUT_B1__PUSH_PULL;
+ 553   1              P1_B1=1;
+ 554   1              pause(40);
+ 555   1              P1MDOUT&=~P1MDOUT_B1__PUSH_PULL;
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 10  
+
+ 556   1          pause(time);
+ 557   1      }
+ 558          
+ 559          void music_box(unsigned char code *list){
+ 560   1              unsigned char n,i,length,tempo;
+ 561   1      
+ 562   1              length=list[0];
+ 563   1              tempo=list[1];
+ 564   1              PCA0CN0|=PCA0CN0_CR__RUN;
+ 565   1              for (i=2;i<length;i+=2){
+ 566   2                      n=list[i];
+ 567   2                      P0|=0x1f;
+ 568   2                      P0&=~n;
+ 569   2                      if (!n){
+ 570   3                              pause(tempo*list[i+1]+40);
+ 571   3                      }else{
+ 572   3                              tone(n,tempo*list[i+1]);
+ 573   3                      }
+ 574   2              }
+ 575   1              PCA0CN0&=~PCA0CN0_CR__RUN;
+ 576   1      }
+ 577          
+ 578          #define BTN_DOWN (0)
+ 579          #define BTN_UP  (1)
+ 580          // attend que le bouton soie
+ 581          // dans l'état demandé.
+ 582          void wait_button(char state){
+ 583   1              char count;
+ 584   1              count=0;
+ 585   1              while (count<10){
+ 586   2                      pause(1);
+ 587   2                      if (state==P1_B2){
+ 588   3                              count++;
+ 589   3                      }else{
+ 590   3                              count=0;
+ 591   3                      }
+ 592   2              }
+ 593   1      }
+ 594          
+ 595          //-----------------------------------------------------------------------------
+ 596          // main() Routine
+ 597          // ----------------------------------------------------------------------------
+ 598          int main (void)
+ 599          {
+ 600   1              unsigned char i,mode, prev;
+ 601   1        // Call hardware initialization routine
+ 602   1        enter_DefaultMode_from_RESET();
+ 603   1      
+ 604   1        i=0;
+ 605   1        prev=0;
+ 606   1        mode=P1_B3;
+ 607   1        while (1) 
+ 608   1        {
+ 609   2          // $[Generated Run-time code]
+ 610   2          // [Generated Run-time code]$
+ 611   2                wait_button(BTN_DOWN);
+ 612   2                if (mode){
+ 613   3                        do{
+ 614   4                               // i=random(8)%TUNES_COUNT;
+ 615   4                                i=TL0%TUNES_COUNT;
+ 616   4                        }while (i==prev);
+ 617   3                }else{
+ 618   3                        i++;
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 11  
+
+ 619   3                        i%=TUNES_COUNT;
+ 620   3                }
+ 621   2                P0|=0xe0;
+ 622   2                P0&=~(i<<5);
+ 623   2                music_box(tunes_list[i]);
+ 624   2                P0=0xff;
+ 625   2                prev=i;
+ 626   2                wait_button(BTN_UP);
+ 627   2        }                             
+ 628   1      }
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 12  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -486,101 +700,101 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION SiLabs_Startup (END)
 
              ; FUNCTION _pause (BEGIN)
-                                           ; SOURCE LINE # 327
+                                           ; SOURCE LINE # 533
 ;---- Variable 'msec' assigned to Register 'R6/R7' ----
-                                           ; SOURCE LINE # 330
+                                           ; SOURCE LINE # 536
 0000 758B80            MOV     TL1,#080H
-                                           ; SOURCE LINE # 331
+                                           ; SOURCE LINE # 537
 0003 758DFF            MOV     TH1,#0FFH
-                                           ; SOURCE LINE # 332
+                                           ; SOURCE LINE # 538
 0006 C28F              CLR     TCON_TF1
-                                           ; SOURCE LINE # 333
+                                           ; SOURCE LINE # 539
 0008 D28E              SETB    TCON_TR1
 000A         ?C0002:
-                                           ; SOURCE LINE # 334
+                                           ; SOURCE LINE # 540
 000A EF                MOV     A,R7
 000B 4E                ORL     A,R6
 000C 6012              JZ      ?C0003
 000E         ?C0004:
-                                           ; SOURCE LINE # 335
+                                           ; SOURCE LINE # 541
 000E 308FFD            JNB     TCON_TF1,?C0004
 0011         ?C0005:
-                                           ; SOURCE LINE # 336
+                                           ; SOURCE LINE # 542
 0011 EF                MOV     A,R7
 0012 1F                DEC     R7
 0013 7001              JNZ     ?C0027
 0015 1E                DEC     R6
 0016         ?C0027:
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 9   
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 13  
 
-                                           ; SOURCE LINE # 337
+                                           ; SOURCE LINE # 543
 0016 758B80            MOV     TL1,#080H
-                                           ; SOURCE LINE # 338
+                                           ; SOURCE LINE # 544
 0019 758DFF            MOV     TH1,#0FFH
-                                           ; SOURCE LINE # 339
+                                           ; SOURCE LINE # 545
 001C C28F              CLR     TCON_TF1
-                                           ; SOURCE LINE # 340
+                                           ; SOURCE LINE # 546
 001E 80EA              SJMP    ?C0002
 0020         ?C0003:
-                                           ; SOURCE LINE # 341
+                                           ; SOURCE LINE # 547
 0020 C28E              CLR     TCON_TR1
-                                           ; SOURCE LINE # 342
+                                           ; SOURCE LINE # 548
 0022 22                RET     
              ; FUNCTION _pause (END)
 
              ; FUNCTION _tone (BEGIN)
-                                           ; SOURCE LINE # 344
+                                           ; SOURCE LINE # 550
 ;---- Variable 'time' assigned to Register 'R4/R5' ----
 ;---- Variable 'tone' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 345
+                                           ; SOURCE LINE # 551
 0000 EF                MOV     A,R7
 0001 900000      R     MOV     DPTR,#scale
 0004 93                MOVC    A,@A+DPTR
 0005 F5FC              MOV     PCA0CPH0,A
-                                           ; SOURCE LINE # 346
+                                           ; SOURCE LINE # 552
 0007 43A502            ORL     P1MDOUT,#02H
-                                           ; SOURCE LINE # 347
+                                           ; SOURCE LINE # 553
 000A D291              SETB    P1_B1
-                                           ; SOURCE LINE # 348
+                                           ; SOURCE LINE # 554
 000C 7F28              MOV     R7,#028H
 000E 7E00              MOV     R6,#00H
 0010 120000      R     LCALL   _pause
-                                           ; SOURCE LINE # 349
+                                           ; SOURCE LINE # 555
 0013 53A5FD            ANL     P1MDOUT,#0FDH
-                                           ; SOURCE LINE # 350
+                                           ; SOURCE LINE # 556
 0016 AF05              MOV     R7,AR5
 0018 AE04              MOV     R6,AR4
 001A 020000      R     LJMP    _pause
              ; FUNCTION _tone (END)
 
              ; FUNCTION _music_box (BEGIN)
-                                           ; SOURCE LINE # 353
+                                           ; SOURCE LINE # 559
 0000 8E00        R     MOV     list,R6
 0002 8F00        R     MOV     list+01H,R7
-                                           ; SOURCE LINE # 356
+                                           ; SOURCE LINE # 562
 0004 8F82              MOV     DPL,R7
 0006 8E83              MOV     DPH,R6
 0008 E4                CLR     A
 0009 93                MOVC    A,@A+DPTR
 000A F500        R     MOV     length,A
-                                           ; SOURCE LINE # 357
+                                           ; SOURCE LINE # 563
 000C 7401              MOV     A,#01H
 000E 93                MOVC    A,@A+DPTR
 ;---- Variable 'tempo' assigned to Register 'R1' ----
 000F F9                MOV     R1,A
-                                           ; SOURCE LINE # 358
+                                           ; SOURCE LINE # 564
 0010 43D840            ORL     PCA0CN0,#040H
-                                           ; SOURCE LINE # 359
+                                           ; SOURCE LINE # 565
 ;---- Variable 'i' assigned to Register 'R3' ----
 0013 7B02              MOV     R3,#02H
 0015         ?C0008:
 0015 EB                MOV     A,R3
 0016 C3                CLR     C
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 10  
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 14  
 
 0017 9500        R     SUBB    A,length
 0019 5034              JNC     ?C0009
-                                           ; SOURCE LINE # 360
+                                           ; SOURCE LINE # 566
 001B E500        R     MOV     A,list+01H
 001D 2B                ADD     A,R3
 001E F582              MOV     DPL,A
@@ -591,15 +805,15 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0026 93                MOVC    A,@A+DPTR
 ;---- Variable 'n' assigned to Register 'R2' ----
 0027 FA                MOV     R2,A
-                                           ; SOURCE LINE # 361
+                                           ; SOURCE LINE # 567
 0028 43801F            ORL     P0,#01FH
-                                           ; SOURCE LINE # 362
+                                           ; SOURCE LINE # 568
 002B F4                CPL     A
 002C 5280              ANL     P0,A
-                                           ; SOURCE LINE # 363
+                                           ; SOURCE LINE # 569
 002E EA                MOV     A,R2
 002F 700F              JNZ     ?C0011
-                                           ; SOURCE LINE # 364
+                                           ; SOURCE LINE # 570
 0031 120000      R     LCALL   L?0029
 0034 2428              ADD     A,#028H
 0036 FF                MOV     R7,A
@@ -607,125 +821,125 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0038 35F0              ADDC    A,B
 003A FE                MOV     R6,A
 003B 120000      R     LCALL   _pause
-                                           ; SOURCE LINE # 365
+                                           ; SOURCE LINE # 571
 003E 800B              SJMP    ?C0010
 0040         ?C0011:
-                                           ; SOURCE LINE # 366
+                                           ; SOURCE LINE # 572
 0040 120000      R     LCALL   L?0029
 0043 FD                MOV     R5,A
 0044 ACF0              MOV     R4,B
 0046 AF02              MOV     R7,AR2
 0048 120000      R     LCALL   _tone
-                                           ; SOURCE LINE # 367
-                                           ; SOURCE LINE # 368
+                                           ; SOURCE LINE # 573
+                                           ; SOURCE LINE # 574
 004B         ?C0010:
 004B 0B                INC     R3
 004C 0B                INC     R3
 004D 80C6              SJMP    ?C0008
 004F         ?C0009:
-                                           ; SOURCE LINE # 369
+                                           ; SOURCE LINE # 575
 004F 53D8BF            ANL     PCA0CN0,#0BFH
-                                           ; SOURCE LINE # 370
+                                           ; SOURCE LINE # 576
 0052 22                RET     
              ; FUNCTION _music_box (END)
 
              ; FUNCTION _wait_button (BEGIN)
-                                           ; SOURCE LINE # 376
+                                           ; SOURCE LINE # 582
 ;---- Variable 'state' assigned to Register 'R5' ----
 0000 AD07              MOV     R5,AR7
-                                           ; SOURCE LINE # 378
+                                           ; SOURCE LINE # 584
 ;---- Variable 'count' assigned to Register 'R4' ----
 0002 E4                CLR     A
 0003 FC                MOV     R4,A
 0004         ?C0014:
-                                           ; SOURCE LINE # 379
+                                           ; SOURCE LINE # 585
 0004 C3                CLR     C
 0005 EC                MOV     A,R4
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 11  
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 15  
 
 0006 6480              XRL     A,#080H
 0008 948A              SUBB    A,#08AH
 000A 5015              JNC     ?C0018
-                                           ; SOURCE LINE # 380
+                                           ; SOURCE LINE # 586
 000C 7F01              MOV     R7,#01H
 000E 7E00              MOV     R6,#00H
 0010 120000      R     LCALL   _pause
-                                           ; SOURCE LINE # 381
+                                           ; SOURCE LINE # 587
 0013 A292              MOV     C,P1_B2
 0015 E4                CLR     A
 0016 33                RLC     A
 0017 B50503            CJNE    A,AR5,?C0016
-                                           ; SOURCE LINE # 382
+                                           ; SOURCE LINE # 588
 001A 0C                INC     R4
-                                           ; SOURCE LINE # 383
+                                           ; SOURCE LINE # 589
 001B 80E7              SJMP    ?C0014
 001D         ?C0016:
-                                           ; SOURCE LINE # 384
+                                           ; SOURCE LINE # 590
 001D E4                CLR     A
 001E FC                MOV     R4,A
-                                           ; SOURCE LINE # 385
-                                           ; SOURCE LINE # 386
+                                           ; SOURCE LINE # 591
+                                           ; SOURCE LINE # 592
 001F 80E3              SJMP    ?C0014
-                                           ; SOURCE LINE # 387
+                                           ; SOURCE LINE # 593
 0021         ?C0018:
 0021 22                RET     
              ; FUNCTION _wait_button (END)
 
              ; FUNCTION main (BEGIN)
-                                           ; SOURCE LINE # 392
-                                           ; SOURCE LINE # 393
-                                           ; SOURCE LINE # 396
+                                           ; SOURCE LINE # 598
+                                           ; SOURCE LINE # 599
+                                           ; SOURCE LINE # 602
 0000 120000      E     LCALL   enter_DefaultMode_from_RESET
-                                           ; SOURCE LINE # 398
+                                           ; SOURCE LINE # 604
 0003 E4                CLR     A
 0004 F500        R     MOV     i,A
-                                           ; SOURCE LINE # 399
+                                           ; SOURCE LINE # 605
 ;---- Variable 'prev' assigned to Register 'R3' ----
 0006 FB                MOV     R3,A
-                                           ; SOURCE LINE # 400
+                                           ; SOURCE LINE # 606
 0007 A293              MOV     C,P1_B3
 0009 33                RLC     A
 000A F500        R     MOV     mode,A
 000C         ?C0019:
-                                           ; SOURCE LINE # 401
-                                           ; SOURCE LINE # 402
-                                           ; SOURCE LINE # 405
+                                           ; SOURCE LINE # 607
+                                           ; SOURCE LINE # 608
+                                           ; SOURCE LINE # 611
 000C E4                CLR     A
 000D FF                MOV     R7,A
 000E 120000      R     LCALL   _wait_button
-                                           ; SOURCE LINE # 406
+                                           ; SOURCE LINE # 612
 0011 E500        R     MOV     A,mode
 0013 600B              JZ      ?C0021
 0015         ?C0024:
-                                           ; SOURCE LINE # 407
-                                           ; SOURCE LINE # 409
+                                           ; SOURCE LINE # 613
+                                           ; SOURCE LINE # 615
 0015 E58A              MOV     A,TL0
-0017 5403              ANL     A,#03H
+0017 5407              ANL     A,#07H
 0019 F500        R     MOV     i,A
-                                           ; SOURCE LINE # 410
+                                           ; SOURCE LINE # 616
 001B 6B                XRL     A,R3
 001C 60F7              JZ      ?C0024
-                                           ; SOURCE LINE # 411
-C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 13:43:15 PAGE 12  
+                                           ; SOURCE LINE # 617
+C51 COMPILER V9.53.0.0   MUSIC_BOX                                                         01/15/2018 16:04:30 PAGE 16  
 
 001E 8005              SJMP    ?C0025
 0020         ?C0021:
-                                           ; SOURCE LINE # 412
+                                           ; SOURCE LINE # 618
 0020 0500        R     INC     i
-                                           ; SOURCE LINE # 413
-0022 530003      R     ANL     i,#03H
-                                           ; SOURCE LINE # 414
+                                           ; SOURCE LINE # 619
+0022 530007      R     ANL     i,#07H
+                                           ; SOURCE LINE # 620
 0025         ?C0025:
-                                           ; SOURCE LINE # 415
+                                           ; SOURCE LINE # 621
 0025 4380E0            ORL     P0,#0E0H
-                                           ; SOURCE LINE # 416
+                                           ; SOURCE LINE # 622
 0028 E500        R     MOV     A,i
 002A C4                SWAP    A
 002B 33                RLC     A
 002C 54E0              ANL     A,#0E0H
 002E F4                CPL     A
 002F 5280              ANL     P0,A
-                                           ; SOURCE LINE # 417
+                                           ; SOURCE LINE # 623
 0031 E500        R     MOV     A,i
 0033 25E0              ADD     A,ACC
 0035 2400        R     ADD     A,#LOW tunes_list
@@ -736,14 +950,14 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 003B E6                MOV     A,@R0
 003C FF                MOV     R7,A
 003D 120000      R     LCALL   _music_box
-                                           ; SOURCE LINE # 418
+                                           ; SOURCE LINE # 624
 0040 7580FF            MOV     P0,#0FFH
-                                           ; SOURCE LINE # 419
+                                           ; SOURCE LINE # 625
 0043 AB00        R     MOV     R3,i
-                                           ; SOURCE LINE # 420
+                                           ; SOURCE LINE # 626
 0045 7F01              MOV     R7,#01H
 0047 120000      R     LCALL   _wait_button
-                                           ; SOURCE LINE # 421
+                                           ; SOURCE LINE # 627
 004A 80C0              SJMP    ?C0019
              ; FUNCTION main (END)
 
@@ -751,10 +965,10 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    289    ----
-   CONSTANT SIZE    =    389    ----
+   CONSTANT SIZE    =    743    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      8       5
+   DATA SIZE        =     16       5
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
    EDATA SIZE       =   ----    ----

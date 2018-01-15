@@ -1,4 +1,4 @@
-LX51 LINKER/LOCATER V4.66.30.0                                                          01/15/2018  13:43:15  PAGE 1
+LX51 LINKER/LOCATER V4.66.30.0                                                          01/15/2018  16:04:30  PAGE 1
 
 
 LX51 LINKER/LOCATER V4.66.30.0, INVOKED BY:
@@ -27,14 +27,14 @@ ACTIVE MEMORY CLASSES OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 
 BASE        START       END         USED      MEMORY CLASS
 ==========================================================
-C:000000H   C:000000H   C:001FFEH   00022AH   CODE
-C:000000H   C:000000H   C:001FFEH   000185H   CONST
+C:000000H   C:000000H   C:001FFEH   000232H   CODE
+C:000000H   C:000000H   C:001FFEH   0002E7H   CONST
 C:000000H   C:000000H   C:001FFEH             ECODE
 B00:0000H   C:000000H   C:001FFEH             HCONST
 X:000000H   X:000000H   X:0000FFH             XDATA
 X:000000H   X:000000H   X:0000FFH             HDATA
 I:000000H   I:000000H   I:0000FFH   000001H   IDATA
-I:000000H   I:000000H   I:00007FH   000015H   DATA
+I:000000H   I:000000H   I:00007FH   00001DH   DATA
 
 
 MEMORY MAP OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
@@ -45,9 +45,9 @@ START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
 
 * * * * * * * * * * *   D A T A   M E M O R Y   * * * * * * * * * * * * *
 000000H   000007H   000008H   ---    AT..     DATA           "REG BANK 0"
-000008H   00000FH   000008H   BYTE   UNIT     DATA           ?DT?MUSIC_BOX
-000010H   000014H   000005H   BYTE   UNIT     DATA           _DATA_GROUP_
-000015H   000015H   000001H   BYTE   UNIT     IDATA          ?STACK
+000008H   000017H   000010H   BYTE   UNIT     DATA           ?DT?MUSIC_BOX
+000018H   00001CH   000005H   BYTE   UNIT     DATA           _DATA_GROUP_
+00001DH   00001DH   000001H   BYTE   UNIT     IDATA          ?STACK
 
 * * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
 000000H   000002H   000003H   ---    OFFS..   CODE           ?CO?SILABS_STARTUP?3
@@ -60,21 +60,21 @@ START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
 000194H   0001B0H   00001DH   BYTE   UNIT     CODE           ?PR?_TONE?MUSIC_BOX
 0001B1H   0001C9H   000019H   BYTE   UNIT     CODE           ?PR?MUSIC_BOX
 0001CAH   0001DFH   000016H   BYTE   UNIT     CODE           ?PR?TIMER01_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0001E0H   0001EAH   00000BH   BYTE   UNIT     CODE           ?C_INITSEG
-0001EBH   0001F4H   00000AH   BYTE   UNIT     CODE           ?PR?PCACH_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0001F5H   0001FBH   000007H   BYTE   UNIT     CODE           ?PR?WDT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-0001FCH   000202H   000007H   BYTE   UNIT     CODE           ?PR?PORTS_1_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 2
+0001E0H   0001F2H   000013H   BYTE   UNIT     CODE           ?C_INITSEG
+0001F3H   0001FCH   00000AH   BYTE   UNIT     CODE           ?PR?PCACH_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+0001FDH   000203H   000007H   BYTE   UNIT     CODE           ?PR?WDT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000204H   00020AH   000007H   BYTE   UNIT     CODE           ?PR?PORTS_1_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 2
 
 
-000203H   000209H   000007H   BYTE   UNIT     CODE           ?PR?PBCFG_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-00020AH   000210H   000007H   BYTE   UNIT     CODE           ?PR?PCACH_1_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000211H   000217H   000007H   BYTE   UNIT     CODE           ?PR?TIMER_SETUP_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000218H   00021EH   000007H   BYTE   UNIT     CODE           ?PR?SILABS_STARTUP?MUSIC_BOX
-00021FH   000222H   000004H   BYTE   UNIT     CODE           ?PR?PORTS_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000223H   000226H   000004H   BYTE   UNIT     CODE           ?PR?CLOCK_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-000227H   000229H   000003H   BYTE   UNIT     CODE           ?PR?PCA_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
-00022AH   0003AEH   000185H   BYTE   UNIT     CONST          ?CO?MUSIC_BOX
+00020BH   000211H   000007H   BYTE   UNIT     CODE           ?PR?PBCFG_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000212H   000218H   000007H   BYTE   UNIT     CODE           ?PR?PCACH_1_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000219H   00021FH   000007H   BYTE   UNIT     CODE           ?PR?TIMER_SETUP_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000220H   000226H   000007H   BYTE   UNIT     CODE           ?PR?SILABS_STARTUP?MUSIC_BOX
+000227H   00022AH   000004H   BYTE   UNIT     CODE           ?PR?PORTS_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+00022BH   00022EH   000004H   BYTE   UNIT     CODE           ?PR?CLOCK_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+00022FH   000231H   000003H   BYTE   UNIT     CODE           ?PR?PCA_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
+000232H   000518H   0002E7H   BYTE   UNIT     CONST          ?CO?MUSIC_BOX
 
 * * * * * * * * *   R E M O V E D     S E G M E N T S   * * * * * * * *
    *DEL*:           000007H   BYTE   UNIT     CODE           ?PR?INTERRUPT_0_ENTER_DEFAULTMODE_FROM_RESET?INITDEVICE
@@ -94,7 +94,7 @@ FUNCTION/MODULE                                BIT_GROUP   DATA_GROUP
 
 SILABS_STARTUP/MUSIC_BOX                      ----- -----  ----- -----
 
-MAIN/MUSIC_BOX                                ----- -----  0010H 0011H
+MAIN/MUSIC_BOX                                ----- -----  0018H 0019H
   +--> ENTER_DEFAULTMODE_FROM_RESET/INITDEVICE
   +--> _WAIT_BUTTON/MUSIC_BOX
   +--> _MUSIC_BOX/MUSIC_BOX
@@ -129,7 +129,7 @@ CLOCK_0_ENTER_DEFAULTMODE_FROM_RESET/INI+     ----- -----  ----- -----
 TIMER01_0_ENTER_DEFAULTMODE_FROM_RESET/I+     ----- -----  ----- -----
 ... NITDEVICE
 
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 3
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 3
 
 
 TIMER_SETUP_0_ENTER_DEFAULTMODE_FROM_RES+     ----- -----  ----- -----
@@ -149,7 +149,7 @@ _WAIT_BUTTON/MUSIC_BOX                        ----- -----  ----- -----
 
 _PAUSE/MUSIC_BOX                              ----- -----  ----- -----
 
-_MUSIC_BOX/MUSIC_BOX                          ----- -----  0012H 0014H
+_MUSIC_BOX/MUSIC_BOX                          ----- -----  001AH 001CH
   +--> MUSIC_BOX
   +--> _PAUSE/MUSIC_BOX
   +--> _TONE/MUSIC_BOX
@@ -194,7 +194,7 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000BCH   DATA     BYTE      ADC0CF
 *SFR* 000000E8H   DATA     BYTE      ADC0CN0
 *SFR* 000000E8H.6 DATA     BIT       ADC0CN0_ADBMEN
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 4
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 4
 
 
 *SFR* 000000E8H.4 DATA     BIT       ADC0CN0_ADBUSY
@@ -225,10 +225,12 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000F0H.5 DATA     BIT       B_B5
 *SFR* 000000F0H.6 DATA     BIT       B_B6
 *SFR* 000000F0H.7 DATA     BIT       B_B7
+      010004B3H   CONST    ---       beau_sapin
+      010003B7H   CONST    ---       bon_tabac
 *SFR* 0000008EH   DATA     BYTE      CKCON0
-      010002C1H   CONST    ---       claire_fontaine
+      010002C9H   CONST    ---       claire_fontaine
 *SFR* 000000A9H   DATA     BYTE      CLKSEL
-      01000223H   CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
+      0100022BH   CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
 *SFR* 0000009BH   DATA     BYTE      CMP0CN0
 *SFR* 0000009DH   DATA     BYTE      CMP0MD
 *SFR* 0000009FH   DATA     BYTE      CMP0MX
@@ -250,18 +252,19 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000F3H   DATA     BYTE      EIP1
       01000176H   CODE     ---       enter_DefaultMode_from_RESET
 *SFR* 000000B7H   DATA     BYTE      FLKEY
-      01000315H   CONST    ---       frere_jacques
+      0100031DH   CONST    ---       frere_jacques
+      0100045FH   CONST    ---       god_save
 *SFR* 000000C7H   DATA     BYTE      HFO0CAL
 *SFR* 000000A8H   DATA     BYTE      IE
 *SFR* 000000A8H.7 DATA     BIT       IE_EA
 *SFR* 000000A8H.4 DATA     BIT       IE_ES0
 *SFR* 000000A8H.6 DATA     BIT       IE_ESPI0
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 5
+
+
 *SFR* 000000A8H.1 DATA     BIT       IE_ET0
 *SFR* 000000A8H.3 DATA     BIT       IE_ET1
 *SFR* 000000A8H.5 DATA     BIT       IE_ET2
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 5
-
-
 *SFR* 000000A8H   DATA     BIT       IE_EX0
 *SFR* 000000A8H.2 DATA     BIT       IE_EX1
 *DEL*:00000000H   CODE     ---       INTERRUPT_0_enter_DefaultMode_from_RESET
@@ -276,8 +279,8 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000E4H   DATA     BYTE      IT01CF
 *SFR* 000000B1H   DATA     BYTE      LFO0CN
       010000E5H   CODE     ---       main
-      01000357H   CONST    ---       melodia
-      01000243H   CONST    ---       ode_joie
+      0100035FH   CONST    ---       melodia
+      0100024BH   CONST    ---       ode_joie
 *SFR* 00000080H   DATA     BYTE      P0
 *SFR* 00000080H   DATA     BIT       P0_B0
 *SFR* 00000080H.1 DATA     BIT       P0_B1
@@ -310,7 +313,7 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000A0H   DATA     BIT       P2_B0
 *SFR* 000000A0H.1 DATA     BIT       P2_B1
 *SFR* 000000A6H   DATA     BYTE      P2MDOUT
-      01000203H   CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
+      0100020BH   CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
 *SFR* 000000F9H   DATA     WORD      PCA0
 *SFR* 0000009EH   DATA     BYTE      PCA0CENT
 *SFR* 0000009CH   DATA     BYTE      PCA0CLR
@@ -321,12 +324,12 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000D8H.7 DATA     BIT       PCA0CN0_CF
 *SFR* 000000D8H.6 DATA     BIT       PCA0CN0_CR
 *SFR* 000000FBH   DATA     WORD      PCA0CP0
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 6
+
+
 *SFR* 000000E9H   DATA     WORD      PCA0CP1
 *SFR* 000000EBH   DATA     WORD      PCA0CP2
 *SFR* 000000FCH   DATA     BYTE      PCA0CPH0
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 6
-
-
 *SFR* 000000EAH   DATA     BYTE      PCA0CPH1
 *SFR* 000000ECH   DATA     BYTE      PCA0CPH2
 *SFR* 000000FBH   DATA     BYTE      PCA0CPL0
@@ -340,12 +343,12 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000D9H   DATA     BYTE      PCA0MD
 *SFR* 00000096H   DATA     BYTE      PCA0POL
 *SFR* 000000F7H   DATA     BYTE      PCA0PWM
-      01000227H   CODE     ---       PCA_0_enter_DefaultMode_from_RESET
-      010001EBH   CODE     ---       PCACH_0_enter_DefaultMode_from_RESET
-      0100020AH   CODE     ---       PCACH_1_enter_DefaultMode_from_RESET
+      0100022FH   CODE     ---       PCA_0_enter_DefaultMode_from_RESET
+      010001F3H   CODE     ---       PCACH_0_enter_DefaultMode_from_RESET
+      01000212H   CODE     ---       PCACH_1_enter_DefaultMode_from_RESET
 *SFR* 00000087H   DATA     BYTE      PCON0
-      0100021FH   CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
-      010001FCH   CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
+      01000227H   CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
+      01000204H   CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
 *SFR* 000000A0H   DATA     BYTE      PPAGE_SFR
 *SFR* 000000F6H   DATA     BYTE      PRTDRV
 *SFR* 0000008FH   DATA     BYTE      PSCTL
@@ -363,7 +366,7 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000B6H   DATA     BYTE      REVID
 *SFR* 000000EFH   DATA     BYTE      RSTSRC
 *SFR* 00000099H   DATA     BYTE      SBUF0
-      0100022AH   CONST    ---       scale
+      01000232H   CONST    ---       scale
 *SFR* 00000098H   DATA     BYTE      SCON0
 *SFR* 00000098H.5 DATA     BIT       SCON0_MCE
 *SFR* 00000098H.2 DATA     BIT       SCON0_RB8
@@ -372,7 +375,7 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 00000098H.7 DATA     BIT       SCON0_SMODE
 *SFR* 00000098H.3 DATA     BIT       SCON0_TB8
 *SFR* 00000098H.1 DATA     BIT       SCON0_TI
-      01000218H   CODE     ---       SILABS_STARTUP
+      01000220H   CODE     ---       SILABS_STARTUP
 *SFR* 000000D6H   DATA     BYTE      SMB0ADM
 *SFR* 000000D7H   DATA     BYTE      SMB0ADR
 *SFR* 000000C1H   DATA     BYTE      SMB0CF
@@ -386,12 +389,13 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 000000C0H.4 DATA     BIT       SMB0CN0_STO
 *SFR* 000000C0H.6 DATA     BIT       SMB0CN0_TXMODE
 *SFR* 000000C2H   DATA     BYTE      SMB0DAT
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 7
+
+
 *SFR* 000000ACH   DATA     BYTE      SMB0TC
+      010003F5H   CONST    ---       souris_verte
 *SFR* 00000081H   DATA     BYTE      SP
 *SFR* 000000A1H   DATA     BYTE      SPI0CFG
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 7
-
-
 *SFR* 000000A2H   DATA     BYTE      SPI0CKR
 *SFR* 000000F8H   DATA     BYTE      SPI0CN0
 *SFR* 000000F8H.5 DATA     BIT       SPI0CN0_MODF
@@ -415,7 +419,7 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 0000008CH   DATA     BYTE      TH0
 *SFR* 0000008DH   DATA     BYTE      TH1
       010001CAH   CODE     ---       TIMER01_0_enter_DefaultMode_from_RESET
-      01000211H   CODE     ---       TIMER_SETUP_0_enter_DefaultMode_from_RESET
+      01000219H   CODE     ---       TIMER_SETUP_0_enter_DefaultMode_from_RESET
 *SFR* 0000008AH   DATA     BYTE      TL0
 *SFR* 0000008BH   DATA     BYTE      TL1
 *SFR* 00000089H   DATA     BYTE      TMOD
@@ -442,7 +446,7 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 *SFR* 00000092H   DATA     BYTE      TMR3RLL
       00000008H   DATA     ---       tunes_list
 *SFR* 000000FFH   DATA     BYTE      VDM0CN
-      010001F5H   CODE     ---       WDT_0_enter_DefaultMode_from_RESET
+      010001FDH   CODE     ---       WDT_0_enter_DefaultMode_from_RESET
 *SFR* 00000097H   DATA     BYTE      WDTCN
 *SFR* 000000E1H   DATA     BYTE      XBR0
 *SFR* 000000E2H   DATA     BYTE      XBR1
@@ -450,24 +454,24 @@ PUBLIC SYMBOLS OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 
 
 
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 8
+
+
 SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
 
       VALUE       REP       CLASS    TYPE      SYMBOL NAME
       ====================================================
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 8
-
-
       ---         MODULE    ---      ---       INITDEVICE
-      01000211H   PUBLIC    CODE     ---       TIMER_SETUP_0_enter_DefaultMode_from_RESET
+      01000219H   PUBLIC    CODE     ---       TIMER_SETUP_0_enter_DefaultMode_from_RESET
       010001CAH   PUBLIC    CODE     ---       TIMER01_0_enter_DefaultMode_from_RESET
-      0100020AH   PUBLIC    CODE     ---       PCACH_1_enter_DefaultMode_from_RESET
-      010001EBH   PUBLIC    CODE     ---       PCACH_0_enter_DefaultMode_from_RESET
-      01000227H   PUBLIC    CODE     ---       PCA_0_enter_DefaultMode_from_RESET
-      01000223H   PUBLIC    CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
-      01000203H   PUBLIC    CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
-      010001FCH   PUBLIC    CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
-      0100021FH   PUBLIC    CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
-      010001F5H   PUBLIC    CODE     ---       WDT_0_enter_DefaultMode_from_RESET
+      01000212H   PUBLIC    CODE     ---       PCACH_1_enter_DefaultMode_from_RESET
+      010001F3H   PUBLIC    CODE     ---       PCACH_0_enter_DefaultMode_from_RESET
+      0100022FH   PUBLIC    CODE     ---       PCA_0_enter_DefaultMode_from_RESET
+      0100022BH   PUBLIC    CODE     ---       CLOCK_0_enter_DefaultMode_from_RESET
+      0100020BH   PUBLIC    CODE     ---       PBCFG_0_enter_DefaultMode_from_RESET
+      01000204H   PUBLIC    CODE     ---       PORTS_1_enter_DefaultMode_from_RESET
+      01000227H   PUBLIC    CODE     ---       PORTS_0_enter_DefaultMode_from_RESET
+      010001FDH   PUBLIC    CODE     ---       WDT_0_enter_DefaultMode_from_RESET
       01000176H   PUBLIC    CODE     ---       enter_DefaultMode_from_RESET
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
@@ -515,13 +519,13 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000EBH   SFRSYM    DATA     BYTE      PCA0CPL2
       000000F0H.5 SFRSYM    DATA     BIT       B_B5
       000000DCH   SFRSYM    DATA     BYTE      PCA0CPM2
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 9
+
+
       000000B8H   SFRSYM    DATA     BYTE      IP
       000000B9H   SFRSYM    DATA     BYTE      ADC0TK
       000000F0H.6 SFRSYM    DATA     BIT       B_B6
       000000C5H   SFRSYM    DATA     WORD      ADC0LT
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 9
-
-
       00000098H.5 SFRSYM    DATA     BIT       SCON0_MCE
       000000F0H.7 SFRSYM    DATA     BIT       B_B7
       000000E1H   SFRSYM    DATA     BYTE      XBR0
@@ -580,13 +584,13 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000A8H.5 SFRSYM    DATA     BIT       IE_ET2
       000000D5H   SFRSYM    DATA     BYTE      P1SKIP
       000000E8H   SFRSYM    DATA     BYTE      ADC0CN0
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 10
+
+
       000000A8H   SFRSYM    DATA     BIT       IE_EX0
       000000B2H   SFRSYM    DATA     BYTE      ADC0CN1
       000000D8H.6 SFRSYM    DATA     BIT       PCA0CN0_CR
       000000A8H.2 SFRSYM    DATA     BIT       IE_EX1
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 10
-
-
       00000098H.7 SFRSYM    DATA     BIT       SCON0_SMODE
       000000B5H   SFRSYM    DATA     BYTE      DEVICEID
       000000A9H   SFRSYM    DATA     BYTE      CLKSEL
@@ -645,13 +649,13 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       00000090H.6 SFRSYM    DATA     BIT       P1_B6
       00000080H.7 SFRSYM    DATA     BIT       P0_B7
       00000090H.7 SFRSYM    DATA     BIT       P1_B7
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 11
+
+
       00000083H   SFRSYM    DATA     BYTE      DPH
       000000C4H   SFRSYM    DATA     BYTE      ADC0GTH
       000000C8H.7 SFRSYM    DATA     BIT       TMR2CN0_TF2H
       000000C8H.3 SFRSYM    DATA     BIT       TMR2CN0_T2SPLIT
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 11
-
-
       000000D0H.6 SFRSYM    DATA     BIT       PSW_AC
       000000F8H   SFRSYM    DATA     BYTE      SPI0CN0
       000000C7H   SFRSYM    DATA     BYTE      HFO0CAL
@@ -710,13 +714,13 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000D0H   SFRSYM    DATA     BYTE      PSW
       000000F7H   SFRSYM    DATA     BYTE      PCA0PWM
       000000B6H   SFRSYM    DATA     BYTE      REVID
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 12
+
+
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
       000000B3H   SFRSYM    DATA     BYTE      ADC0AC
 
       01000176H   BLOCK     CODE     ---       LVL=0
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 12
-
-
       01000176H   LINE      CODE     ---       #22
       01000176H   LINE      CODE     ---       #24
       01000179H   LINE      CODE     ---       #25
@@ -730,61 +734,61 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       01000191H   LINE      CODE     ---       #33
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010001F5H   BLOCK     CODE     ---       LVL=0
-      010001F5H   LINE      CODE     ---       #38
-      010001F5H   LINE      CODE     ---       #41
-      010001F8H   LINE      CODE     ---       #42
-      010001FBH   LINE      CODE     ---       #45
-      ---         BLOCKEND  ---      ---       LVL=0
-
-      0100021FH   BLOCK     CODE     ---       LVL=0
-      0100021FH   LINE      CODE     ---       #47
-      0100021FH   LINE      CODE     ---       #68
-      01000222H   LINE      CODE     ---       #79
-      ---         BLOCKEND  ---      ---       LVL=0
-
-      010001FCH   BLOCK     CODE     ---       LVL=0
-      010001FCH   LINE      CODE     ---       #81
-      010001FCH   LINE      CODE     ---       #92
-      010001FFH   LINE      CODE     ---       #106
-      01000202H   LINE      CODE     ---       #116
-      ---         BLOCKEND  ---      ---       LVL=0
-
-      01000203H   BLOCK     CODE     ---       LVL=0
-      01000203H   LINE      CODE     ---       #118
-      01000203H   LINE      CODE     ---       #124
-      01000206H   LINE      CODE     ---       #141
-      01000209H   LINE      CODE     ---       #145
-      ---         BLOCKEND  ---      ---       LVL=0
-
-      01000223H   BLOCK     CODE     ---       LVL=0
-      01000223H   LINE      CODE     ---       #147
-      01000223H   LINE      CODE     ---       #153
-      01000226H   LINE      CODE     ---       #156
+      010001FDH   BLOCK     CODE     ---       LVL=0
+      010001FDH   LINE      CODE     ---       #38
+      010001FDH   LINE      CODE     ---       #41
+      01000200H   LINE      CODE     ---       #42
+      01000203H   LINE      CODE     ---       #45
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000227H   BLOCK     CODE     ---       LVL=0
-      01000227H   LINE      CODE     ---       #158
-      01000227H   LINE      CODE     ---       #160
-      01000229H   LINE      CODE     ---       #187
+      01000227H   LINE      CODE     ---       #47
+      01000227H   LINE      CODE     ---       #68
+      0100022AH   LINE      CODE     ---       #79
       ---         BLOCKEND  ---      ---       LVL=0
 
-      010001EBH   BLOCK     CODE     ---       LVL=0
-      010001EBH   LINE      CODE     ---       #189
-      010001EBH   LINE      CODE     ---       #192
-      010001EEH   LINE      CODE     ---       #206
-      010001F1H   LINE      CODE     ---       #219
-      010001F4H   LINE      CODE     ---       #228
+      01000204H   BLOCK     CODE     ---       LVL=0
+      01000204H   LINE      CODE     ---       #81
+      01000204H   LINE      CODE     ---       #92
+      01000207H   LINE      CODE     ---       #106
+      0100020AH   LINE      CODE     ---       #116
       ---         BLOCKEND  ---      ---       LVL=0
 
-      0100020AH   BLOCK     CODE     ---       LVL=0
-      0100020AH   LINE      CODE     ---       #230
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 13
+      0100020BH   BLOCK     CODE     ---       LVL=0
+      0100020BH   LINE      CODE     ---       #118
+      0100020BH   LINE      CODE     ---       #124
+      0100020EH   LINE      CODE     ---       #141
+      01000211H   LINE      CODE     ---       #145
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100022BH   BLOCK     CODE     ---       LVL=0
+      0100022BH   LINE      CODE     ---       #147
+      0100022BH   LINE      CODE     ---       #153
+      0100022EH   LINE      CODE     ---       #156
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100022FH   BLOCK     CODE     ---       LVL=0
+      0100022FH   LINE      CODE     ---       #158
+      0100022FH   LINE      CODE     ---       #160
+      01000231H   LINE      CODE     ---       #187
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      010001F3H   BLOCK     CODE     ---       LVL=0
+      010001F3H   LINE      CODE     ---       #189
+      010001F3H   LINE      CODE     ---       #192
+      010001F6H   LINE      CODE     ---       #206
+      010001F9H   LINE      CODE     ---       #219
+      010001FCH   LINE      CODE     ---       #228
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 13
 
 
-      0100020AH   LINE      CODE     ---       #233
-      0100020DH   LINE      CODE     ---       #247
-      01000210H   LINE      CODE     ---       #265
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000212H   BLOCK     CODE     ---       LVL=0
+      01000212H   LINE      CODE     ---       #230
+      01000212H   LINE      CODE     ---       #233
+      01000215H   LINE      CODE     ---       #247
+      01000218H   LINE      CODE     ---       #265
       ---         BLOCKEND  ---      ---       LVL=0
 
       010001CAH   BLOCK     CODE     ---       LVL=0
@@ -800,11 +804,11 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       010001DFH   LINE      CODE     ---       #344
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000211H   BLOCK     CODE     ---       LVL=0
-      01000211H   LINE      CODE     ---       #346
-      01000211H   LINE      CODE     ---       #357
-      01000214H   LINE      CODE     ---       #372
-      01000217H   LINE      CODE     ---       #379
+      01000219H   BLOCK     CODE     ---       LVL=0
+      01000219H   LINE      CODE     ---       #346
+      01000219H   LINE      CODE     ---       #357
+      0100021CH   LINE      CODE     ---       #372
+      0100021FH   LINE      CODE     ---       #379
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       ?C_STARTUP
@@ -840,27 +844,31 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       01000006H   LINE      CODE     ---       #138
       01000008H   LINE      CODE     ---       #139
       01000009H   LINE      CODE     ---       #140
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 14
+
+
       0100000AH   LINE      CODE     ---       #141
       0100000CH   LINE      CODE     ---       #190
       0100000FH   LINE      CODE     ---       #201
       ---         BLOCKEND  ---      ---       LVL=0
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 14
-
-
 
       ---         MODULE    ---      ---       MUSIC_BOX
       00000008H   PUBLIC    DATA     ---       tunes_list
-      01000357H   PUBLIC    CONST    ---       melodia
-      01000315H   PUBLIC    CONST    ---       frere_jacques
-      010002C1H   PUBLIC    CONST    ---       claire_fontaine
-      01000243H   PUBLIC    CONST    ---       ode_joie
-      0100022AH   PUBLIC    CONST    ---       scale
+      010004B3H   PUBLIC    CONST    ---       beau_sapin
+      0100045FH   PUBLIC    CONST    ---       god_save
+      010003F5H   PUBLIC    CONST    ---       souris_verte
+      010003B7H   PUBLIC    CONST    ---       bon_tabac
+      0100035FH   PUBLIC    CONST    ---       melodia
+      0100031DH   PUBLIC    CONST    ---       frere_jacques
+      010002C9H   PUBLIC    CONST    ---       claire_fontaine
+      0100024BH   PUBLIC    CONST    ---       ode_joie
+      01000232H   PUBLIC    CONST    ---       scale
       010000E5H   PUBLIC    CODE     ---       main
       01000154H   PUBLIC    CODE     ---       _wait_button
       01000092H   PUBLIC    CODE     ---       _music_box
       01000194H   PUBLIC    CODE     ---       _tone
       01000131H   PUBLIC    CODE     ---       _pause
-      01000218H   PUBLIC    CODE     ---       SiLabs_Startup
+      01000220H   PUBLIC    CODE     ---       SiLabs_Startup
       000000A2H   SFRSYM    DATA     BYTE      SPI0CKR
       00000080H   SFRSYM    DATA     BYTE      P0
       000000D0H.2 SFRSYM    DATA     BIT       PSW_OV
@@ -901,6 +909,9 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000F0H.3 SFRSYM    DATA     BIT       B_B3
       000000D9H   SFRSYM    DATA     BYTE      PCA0MD
       000000DAH   SFRSYM    DATA     BYTE      PCA0CPM0
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 15
+
+
       000000E9H   SFRSYM    DATA     BYTE      PCA0CPL1
       000000F0H.4 SFRSYM    DATA     BIT       B_B4
       000000DBH   SFRSYM    DATA     BYTE      PCA0CPM1
@@ -909,9 +920,6 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000DCH   SFRSYM    DATA     BYTE      PCA0CPM2
       000000B8H   SFRSYM    DATA     BYTE      IP
       000000B9H   SFRSYM    DATA     BYTE      ADC0TK
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 15
-
-
       000000F0H.6 SFRSYM    DATA     BIT       B_B6
       000000C5H   SFRSYM    DATA     WORD      ADC0LT
       00000098H.5 SFRSYM    DATA     BIT       SCON0_MCE
@@ -966,6 +974,9 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000A8H.4 SFRSYM    DATA     BIT       IE_ES0
       0000009FH   SFRSYM    DATA     BYTE      CMP0MX
       000000A8H.1 SFRSYM    DATA     BIT       IE_ET0
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 16
+
+
       000000AAH   SFRSYM    DATA     BYTE      CMP1MX
       000000A8H.3 SFRSYM    DATA     BIT       IE_ET1
       000000D4H   SFRSYM    DATA     BYTE      P0SKIP
@@ -974,9 +985,6 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000E8H   SFRSYM    DATA     BYTE      ADC0CN0
       000000A8H   SFRSYM    DATA     BIT       IE_EX0
       000000B2H   SFRSYM    DATA     BYTE      ADC0CN1
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 16
-
-
       000000D8H.6 SFRSYM    DATA     BIT       PCA0CN0_CR
       000000A8H.2 SFRSYM    DATA     BIT       IE_EX1
       00000098H.7 SFRSYM    DATA     BIT       SCON0_SMODE
@@ -1031,6 +1039,9 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       00000090H.3 SFRSYM    DATA     BIT       P1_B3
       00000080H.4 SFRSYM    DATA     BIT       P0_B4
       00000090H.4 SFRSYM    DATA     BIT       P1_B4
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 17
+
+
       00000080H.5 SFRSYM    DATA     BIT       P0_B5
       00000090H.5 SFRSYM    DATA     BIT       P1_B5
       00000080H.6 SFRSYM    DATA     BIT       P0_B6
@@ -1039,9 +1050,6 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       00000090H.7 SFRSYM    DATA     BIT       P1_B7
       00000083H   SFRSYM    DATA     BYTE      DPH
       000000C4H   SFRSYM    DATA     BYTE      ADC0GTH
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 17
-
-
       000000C8H.7 SFRSYM    DATA     BIT       TMR2CN0_TF2H
       000000C8H.3 SFRSYM    DATA     BIT       TMR2CN0_T2SPLIT
       000000D0H.6 SFRSYM    DATA     BIT       PSW_AC
@@ -1096,6 +1104,9 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000F8H.6 SFRSYM    DATA     BIT       SPI0CN0_WCOL
       000000F8H.2 SFRSYM    DATA     BIT       SPI0CN0_NSSMD0
       000000D0H.7 SFRSYM    DATA     BIT       PSW_CY
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 18
+
+
       000000A3H   SFRSYM    DATA     BYTE      SPI0DAT
       000000F8H.3 SFRSYM    DATA     BIT       SPI0CN0_NSSMD1
       000000BDH   SFRSYM    DATA     WORD      ADC0
@@ -1104,78 +1115,75 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       000000B6H   SFRSYM    DATA     BYTE      REVID
       000000B7H   SFRSYM    DATA     BYTE      FLKEY
       000000B3H   SFRSYM    DATA     BYTE      ADC0AC
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 18
-
-
 
       010001B1H   BLOCK     CODE     ---       LVL=0
       ---         BLOCKEND  ---      ---       LVL=0
 
-      01000218H   BLOCK     CODE     ---       LVL=0
-      01000218H   LINE      CODE     ---       #25
-      01000218H   LINE      CODE     ---       #26
-      01000218H   LINE      CODE     ---       #29
-      0100021BH   LINE      CODE     ---       #30
-      0100021EH   LINE      CODE     ---       #32
+      01000220H   BLOCK     CODE     ---       LVL=0
+      01000220H   LINE      CODE     ---       #25
+      01000220H   LINE      CODE     ---       #26
+      01000220H   LINE      CODE     ---       #29
+      01000223H   LINE      CODE     ---       #30
+      01000226H   LINE      CODE     ---       #32
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000131H   BLOCK     CODE     ---       LVL=0
       00000006H   SYMBOL    DATA     WORD      msec
-      01000131H   LINE      CODE     ---       #327
-      01000131H   LINE      CODE     ---       #330
-      01000134H   LINE      CODE     ---       #331
-      01000137H   LINE      CODE     ---       #332
-      01000139H   LINE      CODE     ---       #333
-      0100013BH   LINE      CODE     ---       #334
-      0100013FH   LINE      CODE     ---       #335
-      01000142H   LINE      CODE     ---       #336
-      01000147H   LINE      CODE     ---       #337
-      0100014AH   LINE      CODE     ---       #338
-      0100014DH   LINE      CODE     ---       #339
-      0100014FH   LINE      CODE     ---       #340
-      01000151H   LINE      CODE     ---       #341
-      01000153H   LINE      CODE     ---       #342
+      01000131H   LINE      CODE     ---       #533
+      01000131H   LINE      CODE     ---       #536
+      01000134H   LINE      CODE     ---       #537
+      01000137H   LINE      CODE     ---       #538
+      01000139H   LINE      CODE     ---       #539
+      0100013BH   LINE      CODE     ---       #540
+      0100013FH   LINE      CODE     ---       #541
+      01000142H   LINE      CODE     ---       #542
+      01000147H   LINE      CODE     ---       #543
+      0100014AH   LINE      CODE     ---       #544
+      0100014DH   LINE      CODE     ---       #545
+      0100014FH   LINE      CODE     ---       #546
+      01000151H   LINE      CODE     ---       #547
+      01000153H   LINE      CODE     ---       #548
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000194H   BLOCK     CODE     ---       LVL=0
       00000007H   SYMBOL    DATA     BYTE      tone
       00000004H   SYMBOL    DATA     WORD      time
-      01000194H   LINE      CODE     ---       #344
-      01000194H   LINE      CODE     ---       #345
-      0100019BH   LINE      CODE     ---       #346
-      0100019EH   LINE      CODE     ---       #347
-      010001A0H   LINE      CODE     ---       #348
-      010001A7H   LINE      CODE     ---       #349
-      010001AAH   LINE      CODE     ---       #350
+      01000194H   LINE      CODE     ---       #550
+      01000194H   LINE      CODE     ---       #551
+      0100019BH   LINE      CODE     ---       #552
+      0100019EH   LINE      CODE     ---       #553
+      010001A0H   LINE      CODE     ---       #554
+      010001A7H   LINE      CODE     ---       #555
+      010001AAH   LINE      CODE     ---       #556
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000092H   BLOCK     CODE     ---       LVL=0
-      00000012H   SYMBOL    DATA     ---       list
+      0000001AH   SYMBOL    DATA     ---       list
       01000096H   BLOCK     CODE     NEAR LAB  LVL=1
       00000002H   SYMBOL    DATA     BYTE      n
       00000003H   SYMBOL    DATA     BYTE      i
-      00000014H   SYMBOL    DATA     BYTE      length
+      0000001CH   SYMBOL    DATA     BYTE      length
       00000001H   SYMBOL    DATA     BYTE      tempo
       ---         BLOCKEND  ---      ---       LVL=1
-      01000092H   LINE      CODE     ---       #353
-      01000096H   LINE      CODE     ---       #356
-      0100009EH   LINE      CODE     ---       #357
-      010000A2H   LINE      CODE     ---       #358
-      010000A5H   LINE      CODE     ---       #359
-      010000ADH   LINE      CODE     ---       #360
-      010000BAH   LINE      CODE     ---       #361
-      010000BDH   LINE      CODE     ---       #362
-      010000C0H   LINE      CODE     ---       #363
-      010000C3H   LINE      CODE     ---       #364
-      010000D0H   LINE      CODE     ---       #365
-      010000D2H   LINE      CODE     ---       #366
-LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  13:43:15  PAGE 19
+      01000092H   LINE      CODE     ---       #559
+      01000096H   LINE      CODE     ---       #562
+      0100009EH   LINE      CODE     ---       #563
+      010000A2H   LINE      CODE     ---       #564
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 19
 
 
-      010000DDH   LINE      CODE     ---       #367
-      010000DDH   LINE      CODE     ---       #368
-      010000E1H   LINE      CODE     ---       #369
-      010000E4H   LINE      CODE     ---       #370
+      010000A5H   LINE      CODE     ---       #565
+      010000ADH   LINE      CODE     ---       #566
+      010000BAH   LINE      CODE     ---       #567
+      010000BDH   LINE      CODE     ---       #568
+      010000C0H   LINE      CODE     ---       #569
+      010000C3H   LINE      CODE     ---       #570
+      010000D0H   LINE      CODE     ---       #571
+      010000D2H   LINE      CODE     ---       #572
+      010000DDH   LINE      CODE     ---       #573
+      010000DDH   LINE      CODE     ---       #574
+      010000E1H   LINE      CODE     ---       #575
+      010000E4H   LINE      CODE     ---       #576
       ---         BLOCKEND  ---      ---       LVL=0
 
       01000154H   BLOCK     CODE     ---       LVL=0
@@ -1183,53 +1191,56 @@ SYMBOL TABLE OF MODULE:  MUSIC_BOX.OMF.CRBUILD (INITDEVICE)
       01000156H   BLOCK     CODE     NEAR LAB  LVL=1
       00000004H   SYMBOL    DATA     CHAR      count
       ---         BLOCKEND  ---      ---       LVL=1
-      01000154H   LINE      CODE     ---       #376
-      01000156H   LINE      CODE     ---       #378
-      01000158H   LINE      CODE     ---       #379
-      01000160H   LINE      CODE     ---       #380
-      01000167H   LINE      CODE     ---       #381
-      0100016EH   LINE      CODE     ---       #382
-      0100016FH   LINE      CODE     ---       #383
-      01000171H   LINE      CODE     ---       #384
-      01000173H   LINE      CODE     ---       #385
-      01000173H   LINE      CODE     ---       #386
-      01000175H   LINE      CODE     ---       #387
+      01000154H   LINE      CODE     ---       #582
+      01000156H   LINE      CODE     ---       #584
+      01000158H   LINE      CODE     ---       #585
+      01000160H   LINE      CODE     ---       #586
+      01000167H   LINE      CODE     ---       #587
+      0100016EH   LINE      CODE     ---       #588
+      0100016FH   LINE      CODE     ---       #589
+      01000171H   LINE      CODE     ---       #590
+      01000173H   LINE      CODE     ---       #591
+      01000173H   LINE      CODE     ---       #592
+      01000175H   LINE      CODE     ---       #593
       ---         BLOCKEND  ---      ---       LVL=0
 
       010000E5H   BLOCK     CODE     ---       LVL=0
       010000E5H   BLOCK     CODE     NEAR LAB  LVL=1
-      00000010H   SYMBOL    DATA     BYTE      i
-      00000011H   SYMBOL    DATA     BYTE      mode
+      00000018H   SYMBOL    DATA     BYTE      i
+      00000019H   SYMBOL    DATA     BYTE      mode
       00000003H   SYMBOL    DATA     BYTE      prev
       ---         BLOCKEND  ---      ---       LVL=1
-      010000E5H   LINE      CODE     ---       #392
-      010000E5H   LINE      CODE     ---       #393
-      010000E5H   LINE      CODE     ---       #396
-      010000E8H   LINE      CODE     ---       #398
-      010000EBH   LINE      CODE     ---       #399
-      010000ECH   LINE      CODE     ---       #400
-      010000F1H   LINE      CODE     ---       #401
-      010000F1H   LINE      CODE     ---       #402
-      010000F1H   LINE      CODE     ---       #405
-      010000F6H   LINE      CODE     ---       #406
-      010000FAH   LINE      CODE     ---       #407
-      010000FAH   LINE      CODE     ---       #409
-      01000100H   LINE      CODE     ---       #410
-      01000103H   LINE      CODE     ---       #411
-      01000105H   LINE      CODE     ---       #412
-      01000107H   LINE      CODE     ---       #413
-      0100010AH   LINE      CODE     ---       #414
-      0100010AH   LINE      CODE     ---       #415
-      0100010DH   LINE      CODE     ---       #416
-      01000116H   LINE      CODE     ---       #417
-      01000125H   LINE      CODE     ---       #418
-      01000128H   LINE      CODE     ---       #419
-      0100012AH   LINE      CODE     ---       #420
-      0100012FH   LINE      CODE     ---       #421
+      010000E5H   LINE      CODE     ---       #598
+      010000E5H   LINE      CODE     ---       #599
+      010000E5H   LINE      CODE     ---       #602
+      010000E8H   LINE      CODE     ---       #604
+      010000EBH   LINE      CODE     ---       #605
+      010000ECH   LINE      CODE     ---       #606
+      010000F1H   LINE      CODE     ---       #607
+      010000F1H   LINE      CODE     ---       #608
+      010000F1H   LINE      CODE     ---       #611
+      010000F6H   LINE      CODE     ---       #612
+      010000FAH   LINE      CODE     ---       #613
+      010000FAH   LINE      CODE     ---       #615
+      01000100H   LINE      CODE     ---       #616
+      01000103H   LINE      CODE     ---       #617
+      01000105H   LINE      CODE     ---       #618
+      01000107H   LINE      CODE     ---       #619
+      0100010AH   LINE      CODE     ---       #620
+      0100010AH   LINE      CODE     ---       #621
+      0100010DH   LINE      CODE     ---       #622
+      01000116H   LINE      CODE     ---       #623
+      01000125H   LINE      CODE     ---       #624
+      01000128H   LINE      CODE     ---       #625
+      0100012AH   LINE      CODE     ---       #626
+      0100012FH   LINE      CODE     ---       #627
+LX51 LINKER/LOCATER V4.66.30.0                                                        01/15/2018  16:04:30  PAGE 20
+
+
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       ?C_INIT
       0100004DH   PUBLIC    CODE     ---       ?C_START
 
-Program Size: data=22.0 xdata=0 const=389 code=554
+Program Size: data=30.0 xdata=0 const=743 code=562
 LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
