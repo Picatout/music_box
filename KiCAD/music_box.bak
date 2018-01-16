@@ -741,7 +741,7 @@ NoConn ~ 4800 3800
 Text Notes 4300 1800 0    59   ~ 0
 LEDS D1..D5 no. de la note\n
 Text Notes 7650 3150 0    59   ~ 0
-LEDS D6..D8  no. de la musique
+LEDS D6..D8  no. de la mélodie\n
 NoConn ~ 9250 5000
 NoConn ~ 9350 5000
 $EndSCHEMATC
